@@ -42,8 +42,12 @@
 <!-- PAGE 1 -->
 <div class="page active" id="page1">
     <h1>Halo cantiiikk 💗<br>Siapa namanyaa?</h1>
+
+    <p id="personalMsg" style="font-size:18px;color:#555;margin-bottom:15px;display:none;"></p>
+
     <input id="nama" placeholder="Isi nama kamu di sini" style="padding:10px;font-size:16px;border-radius:10px;border:1px solid #ccc;">
-    <br><button class="btn" onclick="next(2)">Next</button>
+    <br><button class="btn" onclick="setPersonalMsg(); next(2)">Next</button>
+</div>
 </div>
 
 <!-- PAGE 2 -->
@@ -73,6 +77,14 @@
 function next(pg){
     document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
     document.getElementById('page'+pg).classList.add('active');
+}
+function setPersonalMsg(){
+    const name = document.getElementById('nama').value;
+    if(name.trim() !== ""){
+        const msg = document.getElementById('personalMsg');
+        msg.innerHTML = `Hai ${name} ✨<br>Aku seneng banget bisa ngobrol sama kamu di sini 💞`;
+        msg.style.display = 'block';
+    }
 }
 </script>
 
