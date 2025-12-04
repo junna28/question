@@ -34,6 +34,7 @@
         background-color: #ccc;
         cursor: not-allowed;
     }
+.disabled { background-color: #ccc; cursor: pointer; position: relative; transition: 0.2s; }
 </style>
 </head>
 <body>
@@ -75,6 +76,15 @@ function next(pg){
 }
 </script>
 
+<script>
+// Bikin tombol 'Tidak' kabur saat disentuh
+const btnTidak = document.querySelector('#page3 .disabled');
+btnTidak.addEventListener('mouseenter', () => {
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 200 - 100;
+    btnTidak.style.transform = `translate(${x}px, ${y}px)`;
+});
+</script>
+
 </body>
 </html>
-
